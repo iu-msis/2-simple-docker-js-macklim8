@@ -39,17 +39,22 @@
 
     <div class="txt">
       <br></br>
-      <a href="img/jkim.jpg" class="img-thumbnail">
-      <img src="img/jkim.jpg" class="img-fluid" alt="Responsive image"></a>
-      <h2><a href="https://www.google.com/url?sa=i&url=https%3A%2F%2Ftwitter.com%2Figkoreanboys&psig=AOvVaw0oGaffSrBOcnCcpWOciJmZ&ust=1599877751003000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCOCwhJqH4OsCFQAAAAAdAAAAABAD">Korean Boy Citation</a></h2>
-    <br></br>
 
-      <h1>Justin Kim</h1>
-      <h3>California, USA</h3>
-      <h3>July 7, 2001</h3>
-      <h3>19 yrs old</h3>
-      <h3><a href="mailto: jkim@gmail.com" class="link">jkim@gmail.com</a></h3>
-      <br></br>
+      <div id="pii">
+        <h1>{{userName}}</h1>
+        <h1>{{formatDate(userDob)}}</h1>
+        <h1>{{userAge}}</h1>
+        <a v-bind:href = "'mailto:' + userEmail">{{userEmail}}</a>
+        <a v-bind:href = "userImgLarge">
+          <img v-bind:src = "userImgThumb">
+        </a>
+      </div>
+
     </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="js/profile.app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
+
   </body>
 </html>
