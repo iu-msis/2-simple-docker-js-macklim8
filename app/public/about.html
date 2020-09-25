@@ -47,15 +47,19 @@
         <h3>{{userAge}}</h3>
         <a v-bind:href = "'mailto:' + userEmail">{{userEmail}}</a>
         <a v-bind:href = "userImgLarge">
-          <img v-bind:src = "userImgThumb">
+          <img v-bind:src = "userImgThumb" >
         </a>
+
+        <form v-on:submit.prevent="fetchInfo">
+          <button>Generate New User!</button>
+        </form>
       </div>
 
+      <br></br>
     </div>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="js/profile.app.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
 
   </body>
 </html>

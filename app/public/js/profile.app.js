@@ -2,6 +2,7 @@ var app = new Vue({
   el: '#pii',
   data: {
     userName: ' ',
+    userCountry: ' ',
     userDob: ' ',
     userAge: ' ',
     userEmail: ' ',
@@ -29,7 +30,8 @@ var app = new Vue({
         this.userImgThumb = userInfo.picture.thumbnail;
       });
     },
-        formatDate(d) {return moment(d).format("MMM Do YYYY");
-      }
+        formatDate(d) {
+          return moment(d).format("MMM Do YYYY");
+      },
   },
 })
