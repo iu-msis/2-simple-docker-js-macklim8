@@ -7,7 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
-    <title>About Me</title>
+    <title>Comments</title>
   </head>
   <body>
     <!-- NavBar -->
@@ -23,35 +23,85 @@
 
         <!--About Me-->
         <li class="nav-item">
-          <a class="navbar-brand" href="about.html">About Me</a>
+          <a class="nav-link" href="about.html">About Me</a>
         </li>
 
         <!--Table of Books-->
         <li class="nav-item">
           <a class="nav-link" href="books.html">Books</a>
         </li>
+
+        <!--Comments-->
+        <li class="nav-item">
+          <a class="navbar-brand" href="comments.html">Comments</a>
+        </li>
+
       </ul>
     </div>
     </nav>
 
-    <!-- Start of Content -->
+    <!-- Fetch Comments -->
 
-    <div id="members">
-      <table id = "commentTable" class="table">
+    <div id="commentTable">
+      <table class="table">
+        <thead>
+          <th>Comment Blog Table</th>
+        </thead>
+
         <tbody id = "commentTableBody">
           <tr class = "comments" v-for="com in comments">
-            <td><span class = "lastName">User ID: {{ com.userId }}</span></td></br>
-            <td><span class = "lastName">First Name: {{ com.firstName }}</span></td></br>
-            <td><span class = "firstName">Last Name: {{ com.lastName }}</span></td></br>
+            <td>Comment ID: {{ com.id }}</td></br>
+            <td>Content: {{ com.commentText }}</td></br>
           </tr>
         </tbody>
       </table>
     </div>
 
+    <!--<div class="container-fluid">
+      <div class="row" id="commentTable">
+        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+          <div class = "comments" v-for="com in comments">
+            <span class = "commentId">User ID: {{ com.commentId }}</span></br>
+            <span class = "commentContent">Last Name: {{ com.commentContent }}</span>
+          </div>
+        </div>
+      </div>
+    </div>-->
+
+    <!--<div id=commentTable>
+      <table id="commentTable">
+        <thead>
+          <th class="header1">ID</th>
+          <th class="header2">Comments</th>
+        </thead>
+
+        <tbody id="commentTableBody">
+          <tr v-for="com in comments" id="commentTable">
+            <td class="rec1"> {{com.commentId}}</td>
+            <td class="rec2"> {{com.commentContent}}</td>
+          </tr>
+        </tbody>
+      </table>-->
+
+
+    <!-- Push Comments -->
+    <form v-on:submit.prevent="createComment()">
+      <div class="comments">
+        <label for="newComment"> Post Comment! </label>
+        <input type="textarea" v-model="newCom.commentText" class="form-control" id="commentText">
+      </div><br/>
+      <input type="submit" value="Post Comment!" class="button" id="submitNewComment">
+    </form>
+  </div>
 
     <!-- External Script Tags -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.7.0/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.0/moment.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="js/comments.js"></script>
 
   </body>

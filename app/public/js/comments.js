@@ -1,31 +1,57 @@
-hwApp = new Vue({
+waitingApp = new Vue({
   el: '#commentTable',
   data: {
     comments: [{
-      firstName: '',
-      lastName: '',
-      userId: '',
+      id: '',
+      commentText: ''
     }],
 
     newCom: {
-      firstName: '',
-      lastName: '',
-      userId: '',
+      id: '',
+      commentText: ''
     }
   },
 
   created(){
-    this.fetchInfo();
+    this.fetchComments();
   },
 
   methods: {
-    fetchInfo: function(){
-      fetch('api/comments/index.php')
+    fetchComments(){
+      fetch('api/comments/')
       .then(response => response.json())
       .then(json => {
-        this.users = json;
-        console.log(this.users);
+        this.comments=json;
+        console.log(this.comments);
       });
     },
-  },
-})
+
+    createComment(){
+        fetch('api/comments/create.php', {
+          method:'POST',
+          body: JSON.stringify(this.newCom),
+          headers: {
+            "Content-Type": "application/json; charset=utf-8"
+          }
+        })
+        .then( response => response.json() )
+        .then( json => {
+          console.log("Returned from post:", json);
+          this.comments = json;
+          this.newCom = this.newInfo();
+        });
+
+        console.log("Creating (POSTing)...!");
+        console.log(this.newCom);
+      },
+
+
+      newInfo() {
+        return {
+          id: "",
+          commentText: ""
+        }
+      }
+    },
+
+});

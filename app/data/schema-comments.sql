@@ -12,5 +12,6 @@ INSERT INTO Comments (id,commentText) VALUES
 ("1", "This is the first comment"),
 ("2", "Now this is the next comment yay"),
 ("3", "Third times the charm!"),
+);
 
 SELECT * FROM Comments
