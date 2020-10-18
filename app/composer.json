@@ -1,9 +1,9 @@
 {
     "name": "iu-msis/project-triage-2020",
-    "description": "An in-class example project",
+    "description": "Homework Projects",
     "license": "private",
     "authors": [{
-        "name": "Tom Gregory"
+        "name": "Mackenzie Lim"
     }],
     "require": {
       "ramsey/uuid": "^4.1"

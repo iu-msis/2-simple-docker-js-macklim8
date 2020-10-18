@@ -54,4 +54,4 @@ waitingApp = new Vue({
       }
     },
 
-});
+})

@@ -43,19 +43,19 @@
     <!-- Fetch Comments -->
 
     <div id="commentTable">
-      <table class="table">
+      <table class="table" id="commentTable">
         <thead>
-          <th>Comment Blog Table</th>
+          <th>Comments Table</th>
         </thead>
 
         <tbody id = "commentTableBody">
           <tr class = "comments" v-for="com in comments">
-            <td>Comment ID: {{ com.id }}</td></br>
+            <td>ID: {{ com.id }}</td></br>
             <td>Content: {{ com.commentText }}</td></br>
           </tr>
         </tbody>
       </table>
-    </div>
+
 
     <!--<div class="container-fluid">
       <div class="row" id="commentTable">
@@ -85,10 +85,10 @@
 
 
     <!-- Push Comments -->
-    <form v-on:submit.prevent="createComment()">
+    <form v-on:submit.prevent="createComment()" id="newCommentForm">
       <div class="comments">
         <label for="newComment"> Post Comment! </label>
-        <input type="textarea" v-model="newCom.commentText" class="form-control" id="commentText">
+        <input type="textarea" v-model="newCom.commentText" class="form-control" id="newComment">
       </div><br/>
       <input type="submit" value="Post Comment!" class="button" id="submitNewComment">
     </form>
