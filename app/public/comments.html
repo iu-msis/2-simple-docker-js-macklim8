@@ -85,12 +85,12 @@
 
 
     <!-- Push Comments -->
-    <form v-on:submit.prevent="createComment()" id="newCommentForm">
+    <form v-on:submit="createComment()" id="newCommentForm">
       <div class="comments">
-        <label for="newComment"> Post Comment! </label>
+        <label for="newComment"> Post a Comment to the List! </label>
         <input type="textarea" v-model="newCom.commentText" class="form-control" id="newComment">
       </div><br/>
-      <input type="submit" value="Post Comment!" class="button" id="submitNewComment">
+      <input type="submit" value="SUBMIT COMMENT" class="button" id="submitNewComment">
     </form>
   </div>
 
