@@ -45,52 +45,24 @@
     <div id="commentTable">
       <table class="table" id="commentTable">
         <thead>
-          <th>Comments Table</th>
+          <th><h2>Comments Table</h2></th>
         </thead>
 
         <tbody id = "commentTableBody">
           <tr class = "comments" v-for="com in comments">
-            <td>ID: {{ com.id }}</td></br>
-            <td>Content: {{ com.commentText }}</td></br>
+            <td><b>ID : </b> {{ com.id }}</td></br>
+            <td><b>Comment : </b> {{ com.commentText }}</td></br>
           </tr>
         </tbody>
       </table>
 
-
-    <!--<div class="container-fluid">
-      <div class="row" id="commentTable">
-        <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
-          <div class = "comments" v-for="com in comments">
-            <span class = "commentId">User ID: {{ com.commentId }}</span></br>
-            <span class = "commentContent">Last Name: {{ com.commentContent }}</span>
-          </div>
-        </div>
-      </div>
-    </div>-->
-
-    <!--<div id=commentTable>
-      <table id="commentTable">
-        <thead>
-          <th class="header1">ID</th>
-          <th class="header2">Comments</th>
-        </thead>
-
-        <tbody id="commentTableBody">
-          <tr v-for="com in comments" id="commentTable">
-            <td class="rec1"> {{com.commentId}}</td>
-            <td class="rec2"> {{com.commentContent}}</td>
-          </tr>
-        </tbody>
-      </table>-->
-
-
     <!-- Push Comments -->
-    <form v-on:submit="createComment()" id="newCommentForm">
+    <form v-on:submit.prevent="createComment()" id="newCommentForm">
       <div class="comments">
         <label for="newComment"> Post a Comment to the List! </label>
         <input type="textarea" v-model="newCom.commentText" class="form-control" id="newComment">
       </div><br/>
-      <input type="submit" value="SUBMIT COMMENT" class="button" id="submitNewComment">
+      <input type="submit" value="SUBMIT COMMENT" class="btn btn-primary" id="submitNewComment">
     </form>
   </div>
 
