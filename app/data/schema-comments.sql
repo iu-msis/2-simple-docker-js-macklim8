@@ -1,6 +1,6 @@
-Create Database msis;
+Use macklim;
 
-Use msis;
+Create Database msis;
 
 DROP TABLE IF EXIST Comments;
 CREATE TABLE Comments (
@@ -10,7 +10,7 @@ CREATE TABLE Comments (
 
 INSERT INTO Comments (id,commentText) VALUES
 ("1", "This is the first comment"),
-("2", "Now this is the next comment yay"),
+("2", "Now this is the next comment yay"),l
 ("3", "Third times the charm!"),
 );
 
