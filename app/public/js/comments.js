@@ -37,7 +37,7 @@ waitingApp = new Vue({
         .then( response => response.json() )
         .then( json => {
           console.log("Returned from post:", json);
-          this.comments = json;
+          this.comments.push(json[0]);
           this.newCom = this.newInfo();
         });
 
